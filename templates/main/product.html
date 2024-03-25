@@ -7,19 +7,28 @@
     <meta charset="UTF-8">
     <title>Product</title>
     <link rel="stylesheet" href="{% static 'css/product-1.css' %}">
+    <script src="{% static 'js/filter_product-1.js' %}"></script>
 </head>
-    <div id="filter">
-        <!-- Filter form -->
-        <form method="get">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="cost">Cost:</label><br>
-            <input type="text" id="cost" name="cost"><br>
-            <label for="category">Category:</label><br>
-            <input type="text" id="category" name="category"><br>
-            <input type="submit" value="Filter">
-        </form>
-    </div>
+  <div id="filter">
+    <!-- Filter form -->
+    <form method="get">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="min-cost">Min Cost:</label><br>
+        <input type="text" id="min-cost" name="min-cost"><br>
+        <label for="max-cost">Max Cost:</label><br>
+        <input type="text" id="max-cost" name="max-cost"><br>
+        <label for="category">Category:</label><br>
+        <select id="category" name="category">
+            <option value="">--Please choose an option--</option>
+            {% for category in categories %}
+            <option value="{{ category.name }}">{{ category.name }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Filter">
+    </form>
+</div>
+
 
     <div id="products">
         <!-- Product list -->
@@ -28,7 +37,10 @@
             <h2>{{ product.name }}</h2>
             <img src="{{ product.image.url }}" alt="{{ product.name }}">
             <p>{{ product.cost }} ₴</p>
-            <button type="button">Buy</button>
+            <span class="product-category" style="display: none;">{{ product.category.name }}</span>
+            <a href="/product/{{ product.id }}/buy">
+                <button type="button">Buy</button>
+            </a>
         </div>
         {% endfor %}
     </div>

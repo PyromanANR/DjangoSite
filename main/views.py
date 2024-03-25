@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Product
+from django.shortcuts import render, get_object_or_404
+from .models import Product, Category
+
 
 # Create your views here.
 def home(request):
@@ -8,4 +9,10 @@ def home(request):
 
 def product(request):
     products = Product.objects.all()
-    return render(request, 'main/product.html', {'products': products})
+    categories = Category.objects.all()
+    return render(request, 'main/product.html', {'products': products, 'categories': categories})
+
+
+def buy_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    return render(request, 'main/buy_product.html', {'product': product})

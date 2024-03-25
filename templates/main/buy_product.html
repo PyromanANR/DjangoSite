@@ -1,0 +1,26 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+</head>
+<body>
+    <div id="product-detail">
+        <div class="product-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+        <div class="product-info">
+            <h2>{{ product.name }}</h2>
+            <p>Ціна: {{ product.cost }} ₴</p>
+            <p>Категорія: {{ product.category }}</p>
+            <p>Опис товару: {{ product.description }}</p>
+            <a href="/product/{{ product.id }}/order">
+                <button type="button">Make Order</button>
+            </a>
+        </div>
+    </div>
+</body>
+{% endblock %}
