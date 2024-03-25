@@ -1,0 +1,35 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <link rel="stylesheet" href="{% static 'css/product-1.css' %}">
+</head>
+    <div id="filter">
+        <!-- Filter form -->
+        <form method="get">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="cost">Cost:</label><br>
+            <input type="text" id="cost" name="cost"><br>
+            <label for="category">Category:</label><br>
+            <input type="text" id="category" name="category"><br>
+            <input type="submit" value="Filter">
+        </form>
+    </div>
+
+    <div id="products">
+        <!-- Product list -->
+        {% for product in products %}
+        <div class="product">
+            <h2>{{ product.name }}</h2>
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <p>{{ product.cost }} ₴</p>
+            <button type="button">Buy</button>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
