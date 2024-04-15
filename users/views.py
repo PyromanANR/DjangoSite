@@ -38,4 +38,4 @@ def register_user(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'authenticate/register_user.html', {'form':form})
+    return render(request, 'authenticate/register_user.html', {'form': form})
