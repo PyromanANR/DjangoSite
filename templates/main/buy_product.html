@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+
+
+
 <head>
     <meta charset="UTF-8">
     <title>Product Detail</title>
@@ -17,9 +20,17 @@
             <p>Ціна: {{ product.cost }} ₴</p>
             <p>Категорія: {{ product.category }}</p>
             <p>Опис товару: {{ product.description }}</p>
-            <a href="/product/{{ product.id }}/order">
-                <button type="button">Make Order</button>
-            </a>
+            <button id="make-order-btn" type="button">Make Order</button>
+            <script>
+            document.getElementById('make-order-btn').addEventListener('click', function(event) {
+                {% if user.is_authenticated %}
+                    //Додати функціонал корзини
+                {% else %}
+                    event.preventDefault();
+                    window.location.href = "{% url 'login' %}";
+                {% endif %}
+            });
+            </script>
         </div>
     </div>
 </body>
