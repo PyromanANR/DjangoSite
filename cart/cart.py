@@ -1,3 +1,5 @@
+import json
+
 from main.models import Profile
 
 
@@ -6,6 +8,10 @@ class Cart:
         self.session = request.session
         self.request = request
         cart = self.session.get('session_key')
+        if self.request.user.is_authenticated:
+            profile = Profile.objects.get(user=request.user)
+            cart = json.loads(profile.cart)
+
         if 'session_key' not in request.session:
             cart = self.session['session_key'] = {}
 

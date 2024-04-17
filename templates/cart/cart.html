@@ -99,6 +99,40 @@ $(document).ready(function(){
       }
     });
   });
+  
+  $(".order-button").click(function(){
+    var total_cost_text = $(".total-cost").text(); 
+    var total_cost_parts = total_cost_text.split(": "); 
+    var total_cost = parseFloat(total_cost_parts[1]); 
+    if (total_cost === 0 || isNaN(total_cost)) {
+      alert("Your cart is empty. Please add some items before making an order.");
+    } else {
+      // Make an AJAX request to the server-side function that generates the PDF
+      $.ajax({
+        url: "{% url 'cart_pdf' %}",
+        type: 'POST', 
+          data: {csrfmiddlewaretoken: '{{ csrf_token }}',},
+        success: function(data){
+             // Create a temporary anchor element
+        var a = document.createElement('a');
+        a.href = window.URL.createObjectURL(new Blob([data], {type: 'application/pdf'}));
+        a.download = 'cart.pdf';
+
+        // Append the anchor to the document body
+        document.body.appendChild(a);
+
+        // Click the anchor to start the download
+        a.click();
+
+        // Remove the anchor from the document body
+        document.body.removeChild(a);
+        location.reload();
+        }
+      });
+    }
+    
+  });
+  
 });
 </script>
     
