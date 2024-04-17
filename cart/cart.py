@@ -8,7 +8,7 @@ class Cart:
         self.session = request.session
         self.request = request
         cart = self.session.get('session_key')
-        if self.request.user.is_authenticated:
+        if self.request.user.is_authenticated and not self.request.user.is_staff:
             profile = Profile.objects.get(user=request.user)
             cart = json.loads(profile.cart)
 
