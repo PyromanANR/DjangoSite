@@ -1,0 +1,36 @@
+   .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .cart-table th, .cart-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    .cart-table th {
+      background-color: #f2f2f2;
+      color: black;
+    }
+    .delete-item {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .order-button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
