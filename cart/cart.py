@@ -7,15 +7,16 @@ class Cart:
     def __init__(self, request):
         self.session = request.session
         self.request = request
-        cart = self.session.get('session_key')
+        cart = self.session.get('session_key', {})
+
         if self.request.user.is_authenticated and not self.request.user.is_staff:
-            profile = Profile.objects.get(user=request.user)
-            cart = json.loads(profile.cart)
+            try:
+                profile = Profile.objects.get(user=request.user)
+                if profile.cart:
+                    cart = json.loads(profile.cart)
+            except (Profile.DoesNotExist, ValueError):
+                pass
 
-        if 'session_key' not in request.session:
-            cart = self.session['session_key'] = {}
-
-        # Make sure cart is available on all pages of site
         self.cart = cart
 
     def __len__(self):
