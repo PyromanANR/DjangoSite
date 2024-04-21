@@ -21,8 +21,12 @@
             <p>Категорія: {{ product.category }}</p>
             <p>Опис товару: {{ product.description }}</p>
             <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
-            <script>
-            document.getElementById('make-order-btn').addEventListener('click', function(event) {
+        </div>
+    </div>
+</body>
+    
+    <script>
+         document.getElementById('add-cart').addEventListener('click', function(event) {
                 {% if user.is_authenticated %}
                     //
                 {% else %}
@@ -30,12 +34,7 @@
                     window.location.href = "{% url 'login' %}";
                 {% endif %}
             });
-            </script>
-        </div>
-    </div>
-</body>
-    
-    <script>
+         
 // Check if button pressed
 $(document).on('click', '#add-cart', function(e){
     e.preventDefault();
