@@ -1,0 +1,140 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+    <head>
+      <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    </head>
+    <h1>Your Cart</h1>
+  <table class="cart-table">
+    <tr>
+      <th>Product Image</th>
+      <th>Product Name</th>
+      <th>Cost</th>
+      <th>Quantity</th>
+      <th>Total Price</th>
+      <th>Action</th>
+    </tr>
+       {% for item in cart %}
+      <tr>
+        <td><img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"></td>
+        <td>{{ item.product.name }}</td>
+        <td class="price">{{ item.product.cost }}</td>
+        <td>
+          <button class="quantity-decrease" data-product-id="{{ item.product.id }}">-</button>
+          <span class="quantity">{{ item.quantity }}</span>
+          <button class="quantity-increase" data-product-id="{{ item.product.id }}">+</button>
+        </td>
+        <td><span class="total-price">{{ item.total_price }}</span></td>
+        <td><button class="delete-item" data-product-id="{{ item.product.id }}">Delete</button></td>
+      </tr>
+    {% endfor %}
+  </table>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+    <h2 class="total-cost">Total: {{ total_cost }}</h2>
+    <button class="order-button">Order</button>
+  </div>
+    
+ <script>
+$(document).ready(function(){
+  $(".quantity-decrease, .quantity-increase").click(function(){
+    var button = $(this);
+    var product_id = button.data("product-id");
+    var quantityElement = button.siblings(".quantity");
+    var quantity = parseInt(quantityElement.text());
+    console.log(quantity);
+    if (button.hasClass("quantity-decrease")) {
+      quantity = Math.max(1, quantity - 1);
+    } else {
+      quantity += 1;
+    }
+    quantityElement.text(quantity);
+
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'cart_update' %}',
+        data: {
+            product_id: product_id, 
+            quantity: quantity,
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            action: 'post' },
+      success: function(data){
+        // Update the total quantity and cost on the page
+        $("#total-quantity").text(data.qty);
+        // Calculate the total price for this item
+        var price = parseFloat(button.closest("tr").find(".price").text());
+        var total_price = price * quantity;
+        button.closest("tr").find(".total-price").text(total_price.toFixed(2));
+    
+        // Calculate the total cost for all items
+        var total_cost = 0;
+        $(".total-price").each(function() {
+          total_cost += parseFloat($(this).text());
+        });
+       $(".total-cost").text('Total: ' + total_cost.toFixed(2));
+      }
+    });
+  });
+
+  $(".delete-item").click(function(){
+    var button = $(this);
+    var product_id = button.data("product-id");
+    $.ajax({
+      url: "{% url 'cart_delete' %}",
+      type: 'POST',
+      data: {product_id: product_id,
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            action: 'post' },
+      success: function(data){
+        // Remove the product from the cart on the page
+        button.closest("tr").remove();
+        // Update the total quantity and cost on the page
+        $("#total-quantity").text(data.qty);
+        var total_cost = 0;
+        $(".total-price").each(function() {
+          total_cost += parseFloat($(this).text());
+        });
+        $("#total-cost").text(total_cost);
+        location.reload();
+      }
+    });
+  });
+  
+  $(".order-button").click(function(){
+    var total_cost_text = $(".total-cost").text(); 
+    var total_cost_parts = total_cost_text.split(": "); 
+    var total_cost = parseFloat(total_cost_parts[1]); 
+    if (total_cost === 0 || isNaN(total_cost)) {
+      alert("Your cart is empty. Please add some items before making an order.");
+    } else {
+      // Make an AJAX request to the server-side function that generates the PDF
+      $.ajax({
+        url: "{% url 'cart_pdf' %}",
+        type: 'POST', 
+          data: {csrfmiddlewaretoken: '{{ csrf_token }}',},
+        success: function(data){
+             // Create a temporary anchor element
+        var a = document.createElement('a');
+        a.href = window.URL.createObjectURL(new Blob([data], {type: 'application/pdf'}));
+        a.download = 'cart.pdf';
+
+        // Append the anchor to the document body
+        document.body.appendChild(a);
+
+        // Click the anchor to start the download
+        a.click();
+
+        // Remove the anchor from the document body
+        document.body.removeChild(a);
+        location.reload();
+        }
+      });
+    }
+    
+  });
+  
+});
+</script>
+    
+{% endblock %}
+
