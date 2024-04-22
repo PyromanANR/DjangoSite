@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<br/>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+   <section class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Про нас</h2>
+                <p>Ми - ваш надійний партнер у всіх справах. З нами ви завжди зможете знайти все, що вам потрібно, за найкращими цінами.</p>
+                <p>Ми пропонуємо широкий асортимент товарів для будь-яких потреб: техніка, товари для дому, товари для спорту та багато іншого.</p>
+                <p>Звертайтеся до нас і ми з радістю допоможемо вам з вибором та доставкою.</p>
+                <p>Контактна інформація:</p>
+                <p>Адреса: вул. Прикладна, 123</p>
+                <p>Телефон: +123456789</p>
+                <p>Email: info@example.com</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Категорії товарів:</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="{% url 'product' %}">
+                            <img src="{% static 'images/shop1.png' %}" alt="Фото магазину 1" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{% url 'product' %}">
+                        <img src="{% static 'images/shop2.png' %}" alt="Фото магазину 2" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+</body>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+</head>
+<body>
+    <div id="product-detail">
+        <div class="product-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+        <div class="product-info">
+            <h2>{{ product.name }}</h2>
+            <p>Ціна: {{ product.cost }} ₴</p>
+            <p>Категорія: {{ product.category }}</p>
+            <p>Опис товару: {{ product.description }}</p>
+            <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
+        </div>
+    </div>
+</body>
+    
+    <script>
+         document.getElementById('add-cart').addEventListener('click', function(event) {
+                {% if user.is_authenticated %}
+                    //
+                {% else %}
+                    event.preventDefault();
+                    window.location.href = "{% url 'login' %}";
+                {% endif %}
+            });
+         
+// Check if button pressed
+$(document).on('click', '#add-cart', function(e){
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'cart_add' %}',
+        data: {
+    product_id: $('#add-cart').val(),
+    product_qty: $('#qty-cart option:selected').text(),
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
+        },
+        success: function(json){
+            console.log(json)
+            document.getElementById("cart_quantity").textContent = json.qty
+            location.reload();
+        },
+
+        error: function(xhr, errmsg, err){
+
+        }
+
+    });
+
+})
+</script>
+    
+{% endblock %}

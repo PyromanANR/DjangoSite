@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#filter {
+    width: 20%;
+    float: left;
+    padding: 10px;
+}
+
+#products {
+    width: 80%;
+    float: right;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.product img {
+    width: auto;
+    height: 200px;
+}
+
+.product h2, .product p {
+    margin: 0 0 10px 0;
+}
+
+.product button {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
