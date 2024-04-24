@@ -43,6 +43,45 @@ INSTALLED_APPS = [
     "cart.apps.CartConfig",
 ]
 
+JAZZMIN_SETTINGS = {
+    "welcome_sign": "Welcome",
+
+    "search_model": ["auth.User"],
+
+    "topmenu_links": [
+        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"model": "auth.User"},
+    ],
+
+    "show_sidebar": True,
+
+    "navigation_expanded": True,
+
+    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
+
+    "custom_links": {
+        "books": [{
+            "name": "Make Messages",
+            "url": "make_messages",
+            "icon": "fas fa-comments",
+            "permissions": ["books.view_book"]
+        }]
+    },
+
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "Main.Product": "fas fa-list",
+        "Main.Profile": "fas fa-credit-card",
+    },
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+
+    "changeform_format": "horizontal_tabs",
+    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
