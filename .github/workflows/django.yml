@@ -30,12 +30,12 @@ jobs:
     - name: Run Tests
       run: python manage.py test
 
-    - name: Merge to master
+    - name: Merge to main
       if: success()
       run: |
-        git checkout master
+        git checkout main
         git merge --no-ff ${{ github.head_ref }}
-        git push origin master
+        git push origin main
 
   deploy:
     needs: build
@@ -62,4 +62,4 @@ jobs:
         heroku_email: "nikitaavdeev_r@knu.ua"
 
     - name: Deploy to Heroku
-      run: git push heroku HEAD:master
+      run: git push heroku HEAD:main
