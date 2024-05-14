@@ -24,23 +24,66 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Build Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:1234567890
+    - name: Set environment variables
+      run: echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> $GITHUB_ENV
 
-    - name: Run Docker container
-      run: docker run --name my-container -d -e DJANGO_SETTINGS_MODULE=Site.settings my-image-name:1234567890
+    - name: Run Tests
+      run: python manage.py test
 
-    - name: Run Django tests
-      run: docker exec my-container python manage.py test
+  merge:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && success()
 
-    - name: Generate HTML report
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Git
       run: |
-        docker exec my-container coverage run manage.py test
-        docker exec my-container coverage html
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
 
-    - name: Upload reports
-      uses: actions/upload-artifact@v2
+    - name: Install GitHub CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y curl
+        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+        sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+        sudo apt-get update
+        sudo apt-get install gh
+
+    - name: Merge Pull Request
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: |
+        PR_NUMBER=${{ github.event.pull_request.number }}
+        gh pr merge $PR_NUMBER --merge --repo ${{ github.repository }} --delete-branch
+
+  deploy:
+    needs: [build, merge]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
       with:
-        name: Test and lint reports
-        path: |
-          htmlcov/index.html
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Login to Heroku
+      uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "djangosite"
+        heroku_email: "nikitaavdeev_r@knu.ua"
+
+    - name: Deploy to Heroku
+      run: git push heroku HEAD:main
