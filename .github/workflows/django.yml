@@ -44,19 +44,12 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
 
-    - name: Install GitHub CLI
-      run: |
-        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0
-        sudo apt-add-repository https://cli.github.com/packages
-        sudo apt update
-        sudo apt install gh
-
     - name: Merge Pull Request
+      uses: cli/gh-action@v2
+      with:
+        args: pr merge ${{ github.event.pull_request.number }} --merge --delete-branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        PR_NUMBER=$(echo ${{ github.event.pull_request.number }})
-        gh pr merge $PR_NUMBER --merge --repo ${{ github.repository }} --delete-branch
 
   deploy:
     needs: [build, merge]
@@ -84,3 +77,4 @@ jobs:
 
     - name: Deploy to Heroku
       run: git push heroku HEAD:main
+
