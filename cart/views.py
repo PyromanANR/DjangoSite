@@ -13,7 +13,6 @@ from reportlab.pdfgen import canvas
 from django.utils import timezone
 
 
-
 # Create your views here.
 def cart(request):
     cart = Cart(request)

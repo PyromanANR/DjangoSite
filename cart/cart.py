@@ -56,7 +56,6 @@ class Cart:
         # Save carty to the Profile Model
         current_user.update(cart=str(carty))
 
-
     def update(self, product, quantity):
         product_id = str(product)
         product_qty = int(quantity)
