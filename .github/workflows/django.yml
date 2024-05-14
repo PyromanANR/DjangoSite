@@ -30,15 +30,32 @@ jobs:
     - name: Run Tests
       run: python manage.py test
 
-    - name: Merge to main
-      if: success()
+  merge:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && success()
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Git
       run: |
-        git checkout main
-        git merge --no-ff ${{ github.head_ref }}
-        git push origin main
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+
+    - name: GitHub CLI
+      uses: docker://ghcr.io/cli/cli:latest
+      with:
+        entrypoint: /bin/sh
+        args: |
+          -c "
+          gh pr merge ${{ github.event.pull_request.number }} --merge --repo ${{ github.repository }} --delete-branch --admin"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
-    needs: build
+    needs: [build, merge]
     runs-on: ubuntu-latest
 
     steps:
