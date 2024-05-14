@@ -1,0 +1,844 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2024-03-18T10:59:33.458Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "admin1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2024-03-18T11:06:55.115Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "3",
+        "object_repr": "qwertyu",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2024-03-25T09:45:09.548Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Пральна машина LG F2J3HS0W",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2024-03-25T09:46:27.254Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Рукавички боксерські PowerPlay",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2024-03-25T11:39:05.052Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Побутова техніка",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2024-03-25T11:39:11.451Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Спорт",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2024-03-25T11:42:26.988Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Пральна машина LG F2J3HS0W",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2024-03-25T11:43:28.242Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Рукавички боксерські PowerPlay",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2024-04-17T11:27:55.581Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "4",
+        "object_repr": "Test",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2024-04-17T11:27:55.654Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "5",
+        "object_repr": "Veronika",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2024-04-17T13:17:31.039Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Profile object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Cart\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2024-04-17T13:21:32.777Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Profile object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Cart\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2024-04-17T13:22:00.327Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Profile object (1)",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2024-04-17T13:32:22.880Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Profile object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Cart\"]}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add product",
+        "content_type": 7,
+        "codename": "add_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change product",
+        "content_type": 7,
+        "codename": "change_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete product",
+        "content_type": 7,
+        "codename": "delete_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view product",
+        "content_type": 7,
+        "codename": "view_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add category",
+        "content_type": 8,
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change category",
+        "content_type": 8,
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete category",
+        "content_type": 8,
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view category",
+        "content_type": 8,
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add profile",
+        "content_type": 9,
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change profile",
+        "content_type": 9,
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete profile",
+        "content_type": 9,
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view profile",
+        "content_type": 9,
+        "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$2BHM0s68NE8BnkXJECicup$MrXRH4T1AVmjzqINJOQ8Wuu+G5GgmYKQ91KQaX/Wi9Y=",
+        "last_login": "2024-04-26T06:05:11.272Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-03-18T10:57:24.713Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$Sh3zKAQNJlP8JIS5TTD8jU$pI4fXcY1+fkZRg7O5uGxZKlLcTWVm6AqgP77MZyEnWU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "admin1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T10:59:32.737Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$2vO0S4Yz8ScNImZiCuum7O$sylB0cPLDK/K818E04Whb5Boi6mi/0dUhUWA+jnNqx8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "qwertyu",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T11:06:54.917Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$NYltU1XcTJWmD0pFp8bxeI$QrE6MogK3g0gxF+y03a5Jg6fr/EJu4210ACbdh+T/0o=",
+        "last_login": "2024-04-26T05:55:54.875Z",
+        "is_superuser": false,
+        "username": "Test",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-04-17T11:28:23.421Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$TmjjLwGGbQJnntr9RiEBXP$49hE2M+Y7hni00tiT+q8ueBOCIMvcoZ53R1KX22iglA=",
+        "last_login": "2024-04-21T18:59:03.389Z",
+        "is_superuser": false,
+        "username": "Test2",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-04-17T15:11:21.241Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$hU4AtHmbSs6bHCidO8NebO$AC9rljpEzuWn0sKlitKkE4Cloy0D5vYwwQys6zhFKQM=",
+        "last_login": "2024-04-24T20:47:24.358Z",
+        "is_superuser": false,
+        "username": "Veronika",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-04-24T20:45:05.713Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "main",
+        "model": "product"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "main",
+        "model": "category"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "main",
+        "model": "profile"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "2hcan2djlcy4lbsylymhiekdfeltnmzw",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQRO_iGlmsf8SU9DmDtfaucQDZUpxUiLuTSCmgnHlv5i0CrksJa-c5TCSuAsTpt4uYnlx3QA-s9yZTq8s8Rbkr8qBdjo34dTvcv4OCvWzr7IiBvXZELudktR9iTIPVZgv-EskiGHsGZsvKg9GZHCBErSAri0l8vgNqOGM:1rmAnk:IbtIDTEUieDDp6pPZiqQ54WLnt9VshIyy0Afw8kgZ90",
+        "expire_date": "2024-04-01T11:05:08.455Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "8itc7ldnm7265bkw6o0rsxaqkprk8e83",
+    "fields": {
+        "session_data": ".eJxVjDsOgzAQRO_iOrKy-BNMmT5nsNbedSBEtoShiBB3D0g0lDPvzayicq1DyX7kn-jW7SY8LnPvl8qTH0h0AsSlCxhHzgegD-Z3kbHkeRqCPBR50ipfhfj7PN3LQY-139fJEgM7ZYlsStEo14YQW6P0HtwjkEHQ5g7MhhsHWiWygBBUA6kxGMX2B3WaPrE:1rxhhL:cKOASY_E5kcFrGrOzIWK-6CmsTdzcT2FEITsBXBRvjs",
+        "expire_date": "2024-05-03T06:26:11.069Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "95v5heknunfnk9wi2ukfgy2txm5skqzj",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAZKiIu3fcMBIYZqRqalHZlvLuSdKHb_977LxXitpawNV7ClNVFWXX43VKkB9cO8j3W26xprusyJd0VvdOmxznz87q7fwclttJrRiYCexIxSOIEQJIHBwiG2Z-_iLJ4iyiWxHj2R2fswBY9DiBRvT_-6jgC:1rwPsB:Y9J4xbcKDWBTx5yCC6K8qLHFmoeIvInV4MLkFAkJZ1U",
+        "expire_date": "2024-04-29T17:12:03.553Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "afuqv6b73sqnwq9rr2h8qc88eihma6fn",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlmO_6Gkzxms9e6CA8iW4qRC3B0ipYD2zcx7iQTbWtLWeUkzibPw4vS7ZcAH1x3QHeqtSWx1XeYsd0UetMupET8vh_t3UKCXbx0yj4FCVAN4IERFHJ3RDqPyBi2jy44wjwMFnTloZR0FZQ1fNUdNKN4f-No4Yw:1rycQ9:CUrWopbxwFHudjIISpouOV0Hr0eVyBcSKw_qw8LT5MQ",
+        "expire_date": "2024-05-05T19:00:13.932Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bbj25t65b4qw9kxgvavuprs110vqvwqf",
+    "fields": {
+        "session_data": "eyJzZXNzaW9uX2tleSI6eyIxIjp7InF1YW50aXR5IjoxMywiaWQiOiIxIn19fQ:1rxZ1A:soKU5HwdMmp5SFxQt7K7we3c_AyfJPjzQSlkub4gYOk",
+        "expire_date": "2024-05-02T21:10:04.634Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "e7gwhmlo1cctb2hero2uigmv30booqbc",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSEWA4tTpvcZ0PILTiIsGbuKcvdgyUXSzsx7b-Zo34rbW1rdHNmVAbv8Mk_hmeoh4oPqfeFhqds6e34k_LSNT0tMr9vZ_h0UaqWvtVJZJBu8wEGGoL1O0hASxjFqD0ZLhd2gpQwDCcgBOgUbMcNosmGfL9kwN28:1rzlJl:Mg0MMtVGn1WTPd3WPnpGcXzp_1XP-rt-MAxUVGIiCGE",
+        "expire_date": "2024-05-08T22:42:21.432Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "q5b6bz6idyjfr7b9hpzecgx3et797vjj",
+    "fields": {
+        "session_data": ".eJxVjDkOwjAURO_iGlle4DtQ0ucM1t_AAeRIcVIh7k4ipYBuNO_NvE3GZS55aTrlQczFeHP47Qj5qXUD8sB6Hy2PdZ4Gsptid9psP4q-rrv7d1CwlXVNKkeVLkROKMig1EEiFoYQIIqLAMISHIsnr2evlNLJ6W0NLrFG8_kCHyY5Pw:1s0Ehr:vVUlnjSjFJg2yF58T1k8tJNTusW8wuEqlEbghnnezG4",
+        "expire_date": "2024-05-10T06:05:11.350Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "wtdh2ca2msntxh07q7k01v87723xzd0h",
+    "fields": {
+        "session_data": ".eJxVj8sOgyAQRf9l1oYI4gOX3fcbyABjtTaQCi4a478XGxd1M4t7zr3JbKBxTaNeIy16ctCDhOI_M2hn8gdwT_SPwGzwaZkMOxR20sjuwdHrdrqXgRHjmNtKWGslykE1qm26shRVJypVOrQ4KFlLnrfazlFTu85mW5AT1HLjWpM55VGLS4J-2wuIFOMUvJ7pkwPgx3mv6NOUclDVBfxe4ZBdcYX8ZAL2ff8CaONRyQ:1rwmRj:427MCk29iJ0C8lMMVbp8DeJkEoRuUlQL2mjyoP0B-dI",
+        "expire_date": "2024-04-30T17:18:15.094Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "x3da1ci9d9oopyrsze3dmkjhwghqcszm",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQRO_iGlmsf8SU9DmDtfaucQDZUpxUiLuTSCmgnHlv5i0CrksJa-c5TCSuAsTpt4uYnlx3QA-s9yZTq8s8Rbkr8qBdjo34dTvcv4OCvWzr7IiBvXZELudktR9iTIPVZgv-EskiGHsGZsvKg9GZHCBErSAri0l8vgNqOGM:1rmAgk:yDiq-BPNeZ4fmwhv60WwkNnmbrm8YWIFfQJgNXI_Unc",
+        "expire_date": "2024-04-01T10:57:54.629Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "x5ptryko90us4ohxacnw0zefi6t2zmne",
+    "fields": {
+        "session_data": ".eJxVjEEOgyAQRe8y64YgiqDL7nsGAjPTQm0gEV00xru3Jm7c_vfe36ByralkN_EXxm2_gfPrEt1aeXaJYIQeLlvwOHE-AL19fhWBJS9zCuJQxEmreBTiz_10LwfR1_ivTeDBkLGy8b0nRElsdas0Wtm32DHqoAnD0JBRgY2SnSYju5afiq0ihP0Haxk-sQ:1rx7Xi:RRk-6Fl3yxopzvhrbazhJcEnpKo-J8VT9u2RPNdGGW8",
+        "expire_date": "2024-05-01T15:49:50.066Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "xl6sfupliqgra62u9a5nk9r02ju44ih0",
+    "fields": {
+        "session_data": "eyJzZXNzaW9uX2tleSI6eyIxIjp7InF1YW50aXR5IjoxLCJpZCI6IjEifX19:1rxZ1K:HpG1WirH3ceoIkgFPSJXlfJHM3-_KBZ6K2-RktlpohM",
+        "expire_date": "2024-05-02T21:10:14.288Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ydh5ikzcfhevond04fod6qld00dxisr6",
+    "fields": {
+        "session_data": ".eJxVjEEOgyAQRe8y64YgiqDL7nsGAjPTQm0gEV00xru3Jm7c_vfe36ByralkN_EXxm2_gfPrEt1aeXaJYIQeLlvwOHE-AL19fhWBJS9zCuJQxEmreBTiz_10LwfR1_ivTeDBkLGy8b0nRElsdas0Wtm32DHqoAnD0JBRgY2SnSYju5afiq0ihP0Haxk-sQ:1rycDJ:a0pX_vw0_pOsPVbezFLJOzDA0XJkogOqBNhXYddAjvw",
+        "expire_date": "2024-05-05T18:46:57.573Z"
+    }
+},
+{
+    "model": "main.profile",
+    "pk": 1,
+    "fields": {
+        "user": 6,
+        "cart": "{}"
+    }
+},
+{
+    "model": "main.profile",
+    "pk": 2,
+    "fields": {
+        "user": 7,
+        "cart": "{}"
+    }
+},
+{
+    "model": "main.profile",
+    "pk": 3,
+    "fields": {
+        "user": 8,
+        "cart": {}
+    }
+},
+{
+    "model": "main.category",
+    "pk": 1,
+    "fields": {
+        "name": "Побутова техніка"
+    }
+},
+{
+    "model": "main.category",
+    "pk": 2,
+    "fields": {
+        "name": "Спорт"
+    }
+},
+{
+    "model": "main.product",
+    "pk": 1,
+    "fields": {
+        "name": "Пральна машина LG F2J3HS0W",
+        "cost": "16499.00",
+        "category": 1,
+        "description": "Максимальне завантаження білизни\r\n4 кг\r\nТип двигуна\r\nКолекторний\r\nКількість програм\r\n14\r\nКлас енергоспоживання\r\nА+\r\nТехнічні особливості\r\nЗ дисплеєм\r\nЗ парою\r\nГабарити (ВхШхГ), см\r\n85x59.5x37.2\r\nМаксимальна швидкість віджимання, об/хв\r\n1000",
+        "image": "image/277546396.jpg"
+    }
+},
+{
+    "model": "main.product",
+    "pk": 2,
+    "fields": {
+        "name": "Рукавички боксерські PowerPlay",
+        "cost": "700.00",
+        "category": 2,
+        "description": "Боксерські рукавички PowerPlay 3004 мають такі особливості:\r\nСинтетична шкіра високого класу\r\nПінний наповнювач відмінно поглинає удар\r\nЗастібка на липучці",
+        "image": "image/385234504.jpg"
+    }
+}
+]
